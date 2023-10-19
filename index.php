@@ -1,3 +1,18 @@
+
+<?php 
+
+session_start();
+
+if (!$_SESSION['nama_lengkap']) {
+  header('Location: login.php');
+}
+
+include "koneksi.php";
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +29,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header bg-primary text-white">
-              DATA PARKIR
+              DATA PARKIR, Admin By <?php echo $_SESSION["nama_lengkap"]?>
             </div>
             <div class="card-body">
               <a href="input-jam-masuk.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a>

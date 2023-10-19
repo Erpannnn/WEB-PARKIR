@@ -29,7 +29,7 @@ $row = mysqli_fetch_array($result);
               INPUT JAM MASUK
             </div>
             <div class="card-body">
-              <form action="simpan-parkir.php" method="POST">
+              <form action="edit-query.php" method="POST">
                 <div class="form-group">
                   <label>Plat Nomor :</label>
                   <input type="text" name="nomor_plat" placeholder="Masukkan Nomor Plat" class="form-control" style="text-transform: uppercase" value="<?php echo $row['nomor_plat']?>">
@@ -38,10 +38,11 @@ $row = mysqli_fetch_array($result);
                   <label>Jenis Kendaraan :</label>
                   <br>
                   <select name="jenis_kendaraan" id="jenis_kendaraan">
-                    <option value="" type="hidden" style="display: none;"><?php echo $row['jenis_kendaraan'] ?></option>
+                    <option value="<?php echo $row['jenis_kendaraan'] ?>" style="display: none;"><?php echo $row['jenis_kendaraan'] ?></option>
                     <option value="Motor">Motor</option>
                     <option value="Mobil">Mobil</option>
                   </select>
+                  <input type="hidden" name="id_parkir" value="<?php echo $row['id_parkir'] ?>">
                 </div>
                 <button type="submit" class="btn btn-success">SIMPAN</button>
                 <button type="reset" class="btn btn-warning">RESET</button>
