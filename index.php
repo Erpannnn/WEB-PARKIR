@@ -33,12 +33,15 @@ include "koneksi.php";
             </div>
             <div class="card-body">
               <a href="input-jam-masuk.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a>
+              <a href="logout.php" class="btn btn-md btn-danger" style="margin-bottom: 10px">LOGOUT</a>
+
               <table class="table table-bordered" id="myTable">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">PLAT NOMOR</th>
                     <th scope="col">JENIS KENDARAAN</th>
+                    <th scope="col">FOTO KENDARAAN</th>
                     <th scope="col">JAM MASUK</th>
                     <th scope="col">JAM KELUAR</th>
                     <th scope="col">ACTION</th>
@@ -55,6 +58,7 @@ include "koneksi.php";
                       <td><?php echo $no++ ?></td>
                       <td style="text-transform: uppercase"><?php echo $row['nomor_plat'] ?></td>
                       <td><?php echo $row['jenis_kendaraan'] ?></td>
+                      <td><img src="kumpulan-gambar/<?php echo $row['gambar'] ?>" alt="" width="50px"></td>
                       <td><?php echo $row['jam_masuk'] ?></td>
                       <td><?php echo $row['jam_keluar'] ?></td>
                       <td class="text-center">
